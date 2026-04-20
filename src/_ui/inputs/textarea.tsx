@@ -64,4 +64,14 @@ const baseStyle = css({
     overflow: 'hidden',
     resize: 'none',
     minHeight: 'calc(3em + 20px)',
+    outline: 'none',
+    '&:focus': {
+        borderColor: colors.neutral500,
+    },
+    '&[aria-invalid="true"]': {
+        borderColor: colors.red600,
+    },
+    '&[aria-invalid="true"]:focus': {
+        borderColor: colors.red600,
+    },
 });

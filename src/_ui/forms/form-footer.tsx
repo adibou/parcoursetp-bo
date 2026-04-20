@@ -2,7 +2,7 @@ import { UseFormReturn } from 'react-hook-form';
 import Button from '../buttons/button';
 import LinkButton from '../buttons/link-button';
 import { css } from '@emotion/react';
-import colors from '@/shared/colors';
+import colors from '../tokens/colors';
 
 interface FormFooterProps {
     form: UseFormReturn<any, any>
@@ -19,7 +19,7 @@ export default function FormFooter({ form, onCancel }: FormFooterProps) {
     return (
         <div css={footerStyle}>            
             {form.formState.isDirty && <>
-                <LinkButton onClick={handleCancel}>Annuler</LinkButton>
+                <LinkButton onClick={handleCancel} size="small" color="secondary">Annuler</LinkButton>
                 <Button type="submit">Enregistrer</Button>
             </>}
             {!form.formState.isDirty && <div css={allSavedStyle}>Tout est enregistré !</div>}

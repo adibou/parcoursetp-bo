@@ -1,5 +1,5 @@
-import colors from '@/shared/colors';
 import { css, Interpolation, Theme } from '@emotion/react';
+import colors from '../tokens/colors';
 
 type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
     css?: Interpolation<Theme>;

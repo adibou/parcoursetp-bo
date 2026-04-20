@@ -1,4 +1,4 @@
-import colors from '@/shared/colors';
+import colors from '../tokens/colors';
 import { css } from '@emotion/react';
 import { FieldErrorsImpl } from 'react-hook-form';
 

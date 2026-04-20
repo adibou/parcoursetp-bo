@@ -1,9 +1,9 @@
 import { RegisterOptions, useFormContext } from 'react-hook-form';
-import Input from '../inputs/input';
-import FormItem from './form-item';
 import { Interpolation, Theme } from '@emotion/react';
+import Textarea from '../inputs/textarea';
+import FormItem from './form-item';
 
-type FormInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+type FormTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
     name: string;
     label?: string;
     help?: string;
@@ -15,7 +15,7 @@ type FormInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 
-export default function FormInput({ label, name, help, registerOptions, min, max, required, ...props }: FormInputProps) {
+export default function FormTextarea({ label, name, help, registerOptions, min, max, required, ...props }: FormTextareaProps) {
     const form = useFormContext();
 
     const options: RegisterOptions = {
@@ -29,7 +29,7 @@ export default function FormInput({ label, name, help, registerOptions, min, max
 
     return (
         <FormItem label={label} name={name} help={help}>
-            <Input id={`rhf-${name}`} {...props} {...form.register(name, options)} />
+            <Textarea id={`rhf-${name}`} {...props} {...form.register(name, options)} />
         </FormItem>
     );
 }

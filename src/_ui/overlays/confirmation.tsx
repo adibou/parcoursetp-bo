@@ -1,11 +1,24 @@
-import colors from '@ui/tokens/colors';
 import { css } from '@emotion/react';
 import { createRoot } from 'react-dom/client';
-import LinkButton from '@ui/elements/link-button';
-import Button from '@ui/elements/button';
+import LinkButton from '@/_ui/buttons/link-button';
+import Button, { BUTTON_COLORS } from '@/_ui/buttons/button';
+import colors from '../tokens/colors';
+import Heading from '../typography/heading';
+import Text from '../typography/text';
+import Inline from '../layouts/inline';
 
 
-export default function confirmation( title: string, message: string, callback: () => void, color: string = colors.red600, text: string = 'Confirmer') {
+
+
+
+export default function confirmation( 
+    title: string, 
+    message: string, 
+    callback: () => void, 
+    color: keyof typeof BUTTON_COLORS = 'error', 
+    text: string = 'Confirmer') {
+
+
     const container = document.getElementById('confirm');
 
     if (!container) {
@@ -26,12 +39,12 @@ export default function confirmation( title: string, message: string, callback: 
         <>
             <div css={backgroundStyle}>
                 <div css={confirmModalStyle}>
-                    <div>{title}</div>
-                    <p>{message}</p>
-                    <div css={footerStyle}>
+                    <Heading typo="h3">{title}</Heading>
+                    <Text>{message}</Text>
+                    <Inline justify='end' gap='10'>
                         <LinkButton onClick={clearConfirm}>Annuler</LinkButton>
                         <Button color={color} onClick={handleConfirm}>{text}</Button>
-                    </div>
+                    </Inline>
                 </div>
             </div>
         </>,
@@ -49,7 +62,7 @@ const backgroundStyle = css({
 });
 
 const confirmModalStyle = css({
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     padding: '20px',
     width: '500px',
     maxWidth: '100%',
@@ -60,10 +73,4 @@ const confirmModalStyle = css({
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
-});
-
-const footerStyle = css({
-    display: 'flex',
-    justifyContent: 'flex-end',
-    gap: '10px',
 });

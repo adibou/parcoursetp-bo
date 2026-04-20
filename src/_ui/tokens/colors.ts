@@ -1,4 +1,7 @@
 const colors = {
+
+    white : '#ffffff',
+
     neutral100: '#f5f5f5',
     neutral200: '#e5e5e5',
     neutral300: '#d4d4d4',
