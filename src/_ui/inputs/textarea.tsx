@@ -1,4 +1,4 @@
-import colors from '@/shared/colors';
+import colors from '@ui/tokens/colors';
 import { css, Interpolation, Theme } from '@emotion/react';
 import React, { useRef, useLayoutEffect, forwardRef } from 'react';
 

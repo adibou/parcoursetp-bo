@@ -2,7 +2,7 @@ import { RegisterOptions, useFormContext } from 'react-hook-form';
 import Input from '../inputs/input';
 import FormItem from './form-item';
 import { Interpolation, Theme } from '@emotion/react';
-import Textarea from '../inputs/texarea';
+import Textarea from '../inputs/textarea';
 
 type FormInputProps = React.HTMLAttributes<HTMLElement> & {
     name: string;

@@ -1,8 +1,8 @@
-import colors from '@/shared/colors';
+import colors from '@ui/tokens/colors';
 import { css } from '@emotion/react';
 import { createRoot } from 'react-dom/client';
-import LinkButton from '../buttons/link-button';
-import Button from '../buttons/button';
+import LinkButton from '@ui/elements/link-button';
+import Button from '@ui/elements/button';
 
 
 export default function confirmation( title: string, message: string, callback: () => void, color: string = colors.red600, text: string = 'Confirmer') {
